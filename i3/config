@@ -1,0 +1,158 @@
+# Modifier
+set $mod Mod1
+
+# Set Font
+font pango:Droid Sans Mono for Powerline 9
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec "xterm -uc"
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+Shift+d exec dmenu_run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+force_display_urgency_hint 0 ms
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 10
+bindsym $mod+3 workspace 11
+bindsym $mod+4 workspace 100
+bindsym $mod+5 workspace 101
+bindsym $mod+6 workspace 110
+bindsym $mod+7 workspace 111
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 10
+bindsym $mod+Shift+3 move container to workspace 11
+bindsym $mod+Shift+4 move container to workspace 100
+bindsym $mod+Shift+5 move container to workspace 101
+bindsym $mod+Shift+6 move container to workspace 110
+bindsym $mod+Shift+7 move container to workspace 111
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+		position top
+}
+# Bind special keys
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5-
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
+# Disable borders for chromium browser
+for_window [class="Chromium"] border none
+# Open browser pop-up windows on workspace 100
+for_window [window_role="pop-up"] border normal
+assign [window_role="pop-up"] 100
+# Open browser apps on workspace 101
+assign [window_role="app"] 101
+# Open Topcoder windows on workspace 111 with floating
+assign [title="TopCoder"] 111
+for_window [class="net-sourceforge-jnlp-runtime-Boot"] floating enable
+
+# Minimize xterm borders
+for_window [class="XTerm"] border pixel 1
+
+# Disable edge borders
+hide_edge_borders both
+
+# Set background color to dark grey
+#exec --no-startup-id xsetroot -solid "#222222"
+
+# Set wallpaper with feh
+exec feh --bg-scale ~/Downloads/arch.png
+
+# Auto-Start Chromium on startup
+exec chromium

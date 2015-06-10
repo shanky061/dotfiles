@@ -1,0 +1,19 @@
+! Fonts
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+!*faceName: DejaVu Sans Mono for Powerline:style=Book:size=11
+*faceName: Meslo LG M DZ for Powerline:style=RegularForPowerline
+!*faceName: Inconsolata for Powerline:style=Medium:size=11
+!*faceName: Source Code Pro for Powerline,Sauce Code Powerline:style=Regular
+!*faceName: Fira Mono for Powerline:style=Regular
+!*faceName: Liberation Mono for Powerline,Literation Mono Powerline:style=Regular
+!*faceName: Anonymous Pro for Powerline,Anonymice Powerline:style=Regular
+!*faceName: monofur for Powerline:style=Regular
+!*faceName: Ubuntu Mono derivative Powerline:style=Regular
+
+! vi:ft=xdefaults:

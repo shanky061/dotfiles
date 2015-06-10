@@ -1,0 +1,10 @@
+# We have to specify the font in two ways.  The first is for
+# backwards compatibility.
+style "user-font"
+{
+#  font_name="Inconsolata for Powerline 10"
+  font_name="DejaVu Sans 10"
+}
+widget_class "*" style "user-font"
+# And this is for newer applications (ie, Firefox)
+gtk-font-name = "DejaVu Sans 10"
