@@ -32,18 +32,44 @@ if [ "$TERM" != "dumb" ]; then
 	ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'bg=red,bold')
 fi
 
+# Include my bin folder also
+if [ -d "$HOME/bin" ]; then
+	PATH="$PATH:$HOME/bin"
+fi
+
 #
 # Functions
 #
 
 # Syncronize time with remote server
 function synctime {
-	sudo date -s "`curl -sI http://nist.time.gov | awk -F': ' '/Date: / {print \$2}'`"
+	sudo date -s "`curl -sI google.com | awk -F': ' '/Date: / {print \$2}'`"
 }
 
 # Get rid of mpv info messages and run it independent of terminal
 function mp {
 	command mpv "$@" &> /dev/null & disown
 }
+
+# Start new x display
+function newX {
+	# Check if x isn't started already
+	if [ "$DISPLAY" == "" ]; then
+		# by default start display :7
+		[ $# -eq 0 ] && startx --:7: &
+		# start display given
+		[ $# -eq 1 ] && startx --:$1: &
+	else
+		echo "Display no $DISPLAY is already started."
+	fi
+}
+
+#
+# Startup Programs
+#
+
+# Print Space Invaders ANSI art
+command $HOME/bin/spacex
+
 
 # vi: ft=zsh:

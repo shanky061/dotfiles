@@ -2,7 +2,7 @@
 set $mod Mod1
 
 # Set Font
-font pango:Droid Sans Mono for Powerline 9
+font pango:Inconsolata for Powerline 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -23,10 +23,10 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -35,10 +35,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -61,12 +61,13 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
-force_display_urgency_hint 0 ms
+# Automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -75,7 +76,7 @@ bindsym $mod+3 workspace 11
 bindsym $mod+4 workspace 100
 bindsym $mod+5 workspace 101
 bindsym $mod+6 workspace 110
-bindsym $mod+7 workspace 111
+bindsym $mod+m workspace Media
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -84,7 +85,7 @@ bindsym $mod+Shift+3 move container to workspace 11
 bindsym $mod+Shift+4 move container to workspace 100
 bindsym $mod+Shift+5 move container to workspace 101
 bindsym $mod+Shift+6 move container to workspace 110
-bindsym $mod+Shift+7 move container to workspace 111
+bindsym $mod+Shift+m move container to workspace Media
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -92,6 +93,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -119,11 +121,31 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Grayscale					#Border		#Background	#Text
+client.focused				#1C1C1C		#3C3C5C		#FFFFFF
+client.focused_inactive		#1C1C1C		#2C2C3C		#FFFFFF
+client.unfocused			#1C1C1C		#3C3C3C		#CCCCCC
+client.urgent				#1C1C1C		#FF4444		#FFFFFF
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-		position top
+#	mode hide
+	status_command i3status
+	position top
+	separator_symbol "❮"
+	font pango:Source Sans Pro Semibold 11
+
+	colors {
+        background #1C1C1C
+        statusline #FF0F1F
+        separator #999999
+
+		focused_workspace  #1C1C1C #1C1C1C #FFFFFF
+		active_workspace   #1C1C1C #1C1C1C #0000FF
+		inactive_workspace #1C1C1C #1C1C1C #555555
+		urgent_workspace   #1C1C1C #1C1C1C #FF0F1F
+    }
 }
 # Bind special keys
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5-
@@ -131,16 +153,21 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
+bindsym $mod+p exec mplay
+
 # Disable borders for chromium browser
 for_window [class="Chromium"] border none
 # Open browser pop-up windows on workspace 100
 for_window [window_role="pop-up"] border normal
+for_window [window_role="pop-up"] floating enable
 assign [window_role="pop-up"] 100
 # Open browser apps on workspace 101
 assign [window_role="app"] 101
 # Open Topcoder windows on workspace 111 with floating
-assign [title="TopCoder"] 111
+assign [title="TopCoder"] 11
 for_window [class="net-sourceforge-jnlp-runtime-Boot"] floating enable
+# Open Media files in Media workspace
+assign [class="mpv"] Media
 
 # Minimize xterm borders
 for_window [class="XTerm"] border pixel 1
@@ -156,3 +183,5 @@ exec feh --bg-scale ~/Downloads/arch.png
 
 # Auto-Start Chromium on startup
 exec chromium
+
+# vim:ft=i3
