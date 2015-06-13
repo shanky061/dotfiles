@@ -23,5 +23,5 @@ fi
 # If started for another DISPLAY/tty, open just xterm
 if [ $DISPLAY != ":0" ]; then
 	# Adjust geometry for font config.
-	exec xterm -geometry 170x40+0+0
+	exec xterm -geometry 170x40+0+0 -e /usr/bin/tmux
 fi

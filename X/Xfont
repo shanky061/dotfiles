@@ -6,6 +6,7 @@ Xft.rgba: rgb
 Xft.hinting: true
 Xft.hintstyle: hintslight
 
+*boldFont:	Meslo LG L DZ for Powerline:style=RegularForPowerline
 !*faceName: DejaVu Sans Mono for Powerline:style=Book:size=11
 *faceName: Meslo LG M DZ for Powerline:style=RegularForPowerline
 !*faceName: Inconsolata for Powerline:style=Medium:size=11

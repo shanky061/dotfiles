@@ -8,7 +8,7 @@ font pango:Inconsolata for Powerline 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "xterm -uc"
+bindsym $mod+Return exec "xterm -uc -e /usr/bin/tmux"
 
 # kill focused window
 bindsym $mod+Shift+q kill

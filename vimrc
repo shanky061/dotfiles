@@ -55,9 +55,13 @@ set timeoutlen=50
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
-" Set nice colorscheme
-colorscheme badwolf
-let g:airline_theme='murmur'
+" Set dark colorscheme
+"colorscheme badwolf
+"let g:airline_theme='murmur'
+
+" Set light colorscheme
+colorscheme summerfruit256
+let g:airline_theme='tomorrow'
 
 " enable new c++ highlighting
 let g:cpp_class_scope_highlight=1
