@@ -20,7 +20,7 @@ if [ $DISPLAY == ":0" ]; then
 	exec i3
 fi
 
-# If started for another DISPLAY/tty, open just xterm
+# If started for another DISPLAY/tty, open tmux session
 if [ $DISPLAY != ":0" ]; then
 	# Adjust geometry for font config.
 	exec xterm -geometry 170x40+0+0 -e /usr/bin/tmux

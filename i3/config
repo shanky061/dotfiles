@@ -7,7 +7,7 @@ font pango:Inconsolata for Powerline 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# start a terminal with tmux session
 bindsym $mod+Return exec "xterm -uc -e /usr/bin/tmux"
 
 # kill focused window
@@ -163,7 +163,7 @@ for_window [window_role="pop-up"] floating enable
 assign [window_role="pop-up"] 100
 # Open browser apps on workspace 101
 assign [window_role="app"] 101
-# Open Topcoder windows on workspace 111 with floating
+# Open Topcoder windows on workspace 11 with floating
 assign [title="TopCoder"] 11
 for_window [class="net-sourceforge-jnlp-runtime-Boot"] floating enable
 # Open Media files in Media workspace

@@ -71,9 +71,4 @@ function newX {
 # Print Space Invaders ANSI art
 command $HOME/bin/spacex
 
-# Start tmux session
-#if ! tmux has-session 2> /dev/null ; then
-#	tmux -2;	exit;
-#fi
-
 # vi: ft=zsh:

@@ -6,7 +6,7 @@
 "
 "
 
-set history=15		" keep 15 lines of command line history
+set history=25		" keep 25 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
