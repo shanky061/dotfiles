@@ -13,7 +13,8 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias wi="whatis"
+alias wi='whatis'
+alias py='python -q -S'
 
 #
 # Environment
@@ -86,11 +87,28 @@ function copy {
 	fi
 }
 
+# Read TODO from todo file in $HOME directory
+function todo {
+	echo -e ' \e[0;37;41m TODO \e[0m'
+
+	if [ -f $HOME/TODO ]; then
+		let i=1
+		while read t; do
+			echo -e "\t\e[34m$i.\t\e[0;33m$t"; ((i++))
+		done < $HOME/TODO
+	fi
+
+	echo -en '\e[0m'
+}
+
 #
 # Startup Programs
 #
 
 # Print Space Invaders ANSI art
 #command $HOME/bin/spacex
+
+# Print TODO list
+todo
 
 # vi: ft=zsh:

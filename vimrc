@@ -6,6 +6,7 @@
 "
 "
 
+set hidden		" keep undo history when changing buffers
 set history=25		" keep 25 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
