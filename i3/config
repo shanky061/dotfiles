@@ -157,10 +157,8 @@ bindsym $mod+p exec mplay
 
 # Disable borders for chromium browser
 for_window [class="Chromium"] border none
-# Open browser pop-up windows on workspace 100
-for_window [window_role="pop-up"] border normal
-for_window [window_role="pop-up"] floating enable
-assign [window_role="pop-up"] 100
+# Enable floating of Hangouts
+for_window [class="Chromium" instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] floating enable
 # Open browser apps on workspace 101
 assign [window_role="app"] 101
 # Open Topcoder windows on workspace 11 with floating

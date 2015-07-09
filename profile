@@ -14,7 +14,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias wi='whatis'
-alias py='python -q -S'
+alias py='python2 -i -c ""'
 
 #
 # Environment
