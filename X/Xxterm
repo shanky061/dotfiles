@@ -2,8 +2,7 @@
 
 ! General settings
 XTerm*termName: xterm-256color
-!XTerm*geometry: 136x40
-XTerm*saveLines: 2048
+XTerm*saveLines: 5000
 XTerm*scrollBar: False
 XTerm*loginshell: False
 XTerm*cursorBlink: False
@@ -11,18 +10,18 @@ XTerm*cursorBlink: False
 ! Fonts and Encoding
 XTerm*utf8: True
 XTerm*locale: True
-XTerm*utf8Title: True
 XTerm*renderFont: True
 XTerm*preeditType: Root
-XTerm*xftAntialias: true
+XTerm*xftAntialias: True
 XTerm*faceSize:	10
+XTerm*faceName:	Meslo LG S for Powerline
 
 ! Trim trailing spaces
-XTerm*trimSelection: true
+XTerm*trimSelection: True
 
 ! Fix alt-key inputting
-XTerm*eightBitInput: false
-XTerm*metaSendsEscape: true
+XTerm*eightBitInput: False
+XTerm*metaSendsEscape: True
 
 ! Copy and paste with clipboard
 XTerm*translations: #override \

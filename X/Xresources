@@ -1,5 +1,2 @@
-#include "Xfont"
-#include "Xcursor"
 #include "Xxterm"
 #include "tangoX"
-#include "Xurxvt"

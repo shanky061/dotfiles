@@ -2,7 +2,7 @@
 set $mod Mod1
 
 # Set Font
-font pango:Inconsolata for Powerline 11
+font pango:Inconsolata 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -134,11 +134,11 @@ bar {
 	status_command i3status
 	position top
 	separator_symbol "❮"
-	font pango:Source Sans Pro Semibold 11
+	font pango:Fira Sans SemiBold 11
 
 	colors {
         background #1C1C1C
-        statusline #FF0F1F
+        statusline #FF4F8F
         separator #999999
 
 		focused_workspace  #1C1C1C #1C1C1C #FFFFFF
@@ -152,8 +152,6 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5-
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-
-bindsym $mod+p exec mplay
 
 # Disable borders for chromium browser
 for_window [class="Chromium"] border none

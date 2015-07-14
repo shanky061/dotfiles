@@ -70,7 +70,7 @@ function tc {
 # Start new x display
 function newX {
 	# Check if x isn't started already
-	if [ "$DISPLAY" == "" ]; then
+	if [ "$DISPLAY" = "" ]; then
 		# by default start display :7 OR
 		[ $# -eq 0 ] && startx --:7: &
 		# start display given
