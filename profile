@@ -13,8 +13,15 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# Some shortcuts
 alias wi='whatis'
 alias py='python2 -i -c ""'
+
+# Now git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
 
 #
 # Environment
