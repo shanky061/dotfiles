@@ -36,6 +36,10 @@ if has("autocmd")
 	" Also load indent files, to automatically do language-dependent indenting.
 	filetype plugin indent on
 
+	" Set auto-completion on for supported languages
+	filetype plugin on
+	set omnifunc=syntaxcomplete#Complete
+
 else
 
 	set autoindent		" always set autoindenting on

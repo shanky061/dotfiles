@@ -142,7 +142,7 @@ bar {
 
 	colors {
         background #1C1C1C
-        statusline #FF4F8F
+        statusline #FF1F4F
         separator #999999
 
 		focused_workspace  #1C1C1C #1C1C1C #FFFFFF
@@ -181,7 +181,7 @@ hide_edge_borders both
 #exec --no-startup-id xsetroot -solid "#222222"
 
 # Set wallpaper with feh
-exec feh --bg-scale ~/Downloads/arch.png
+exec sh $HOME/.fehbg
 
 # Auto-Start Chromium on startup
 exec chromium
