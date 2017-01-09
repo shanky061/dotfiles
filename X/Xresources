@@ -1,2 +1,2 @@
-#include "Xxterm"
-#include "tangoX"
+#include ".dotfiles/X/Xxterm"
+#include ".dotfiles/X/tangoX"
