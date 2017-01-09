@@ -71,7 +71,7 @@ function mp {
 
 # Topcoder Arena launcher
 function tc {
-	javaws -Xignoreheaders -Xoffline -nosecurity -noupdate -headless -property user.home=$HOME/.config -jnlp $HOME/bin/tc.jnlp &> /dev/null &
+	javaws -Xignoreheaders -property user.home=$HOME/.config -jnlp $HOME/bin/tc.jnlp &> /dev/null &
 }
 
 # Start new x display
